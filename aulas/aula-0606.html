@@ -42,6 +42,8 @@
     <br>
     <button onclick="inputName()">Digitar o nome</button>
     <br>
+    <button  onclick="personalizeTitle()">Personalizar Título</button>
+    <br>
     <script>
         document.write("Operações JS<br>");
         let n1 = 40;
@@ -52,6 +54,11 @@
             let nome = prompt("Digite o seu nome!");
             alert("O nome digitado foi: " + nome);
 
+        }
+
+        function personalizeTitle(){
+            let newTitle = prompt('Digite o novo título');
+            document.getElementById("titulo").innerHTML = newTitle;
         }
 
         // DESAFIO de JS
