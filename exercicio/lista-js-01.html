@@ -58,14 +58,14 @@
             <h1>Questã 01:<span>Calcular a média ponderada de 3 notas
                     <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1006"
                         target="_blank">detalhar</a></span></h1>
-            <p id="">Resultado: A média das 3 notas foi xx.</p>
+            <p id="resultado01">Resultado: A média das 3 notas foi xx.</p>
             <label for="">Nota 01:</label>
-            <input type="text" id="">
+            <input type="text" id="nota01">
             <label for="">Nota 02:</label>
-            <input type="text" id="">
+            <input type="text" id="nota02">
             <label for="">Nota 03:</label>
-            <input type="text" id="">
-            <input type="button" value="Calcular">
+            <input type="text" id="nota03">
+            <input type="button" onclick="questao01()" value="Calcular">
         </div>
         <div class="questao">
             <h1>Questã 02:<span> Senha Fixa <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1114"
@@ -125,6 +125,17 @@
             <input type="button" value="Calcular">
         </div>
     </div>
+    <script>
+        function questao01() {
+            let n1 = document.getElementById('nota01').value;
+            let n2 = document.getElementById('nota02').value;
+            let n3 = document.getElementById('nota03').value;
+
+            let resultado = n1 + n2 + n3; 
+            
+            document.getElementById('resultado01').innerHTML = `Resultado: A média das 3 notas foi ${resultado}.`;
+        }
+    </script>
 </body>
 
 </html>
