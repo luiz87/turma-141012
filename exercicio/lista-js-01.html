@@ -88,10 +88,10 @@
             <h1>Questã 04:<span> Aumento de Salário <a
                         href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1048"
                         target="_blank">detalhar</a></span></h1>
-            <p id="">Resultado: Novo salario: xx.xx, Ganho: xx.xx, Percentual: xx%</p>
+            <p id="resultado04">Resultado: Novo salario: xx.xx, Ganho: xx.xx, Percentual: xx%</p>
             <label for="">Salário atual:</label>
-            <input type="text" id="">
-            <input type="button" value="Calcular">
+            <input type="text" id="salario">
+            <input type="button" onclick="questao04()" value="Calcular">
         </div>
         <div class="questao">
             <h1>Questã 05:<span> Imposto de Renda <a
@@ -167,6 +167,31 @@
                 resultado = 'fora do intervalo';
             }
             document.getElementById("resultado03").innerHTML = `Resultado: O valor digita esta ${resultado}.`;
+        }
+
+        function questao04() {
+            let salario = document.getElementById("salario").value;
+            let percentual = 0;
+
+            if(salario > 0 && salario <= 400){
+                percentual = 15;
+            }
+            if(salario > 400 && salario <= 800){
+                percentual = 12;
+            }
+            if(salario > 800 && salario <= 1200){
+                percentual = 10;
+            }
+            if(salario > 1200 && salario <= 2000){
+                percentual = 7;
+            }
+            if(salario > 2000) {
+                percentual = 4;
+            }
+            
+            let ganho = (salario/100) * percentual;
+            let novoSalario = Number(salario) + ganho;
+            document.getElementById("resultado04").innerHTML = `Resultado: Novo salario: ${novoSalario}, Ganho: ${ganho}, Percentual: ${percentual}%`;
         }
     </script>
 </body>
