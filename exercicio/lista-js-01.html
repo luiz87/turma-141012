@@ -119,12 +119,12 @@
             <h1>Questã 07:<span> Calcular o consumo médio de um automóvel <a
                         href="https://www.urionlinejudge.com.br/repository/UOJ_1014.html"
                         target="_blank">detalhar</a></span></h1>
-            <p id="">Resultado: O automóvel fez o consumo médio de xxx.</p>
+            <p id="resultado07">Resultado: O automóvel fez o consumo médio de xxx.</p>
             <label for="">Distância percorrida</label>
-            <input type="text" id="">
+            <input type="text" id="distancia">
             <label for="">Combustível gasto</label>
-            <input type="text" id="">
-            <input type="button" value="Calcular">
+            <input type="text" id="combustivel">
+            <input type="button" onclick="questao07()" value="Calcular">
         </div>
     </div>
     <script>
@@ -203,6 +203,14 @@
             let resultado = valorHora * totalHoras;
             
             document.getElementById("resultado06").innerHTML = `Resultado: O funcionario ${nome} vai receber ${resultado}.`;
+        }
+
+        function questao07() {
+            let combustivel = document.getElementById("combustivel").value;
+            let distancia = document.getElementById("distancia").value;
+            let resultado = distancia/combustivel;
+
+            document.getElementById("resultado07").innerHTML = `Resultado: O automóvel fez o consumo médio de  ${resultado}.`;
         }
     </script>
 </body>
