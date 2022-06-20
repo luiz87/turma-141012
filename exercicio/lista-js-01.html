@@ -79,10 +79,10 @@
             <h1>Questã 03:<span> Intervalo [0,25], [25,50], [50,75], [75,100] <a
                         href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1037"
                         target="_blank">detalhar</a></span></h1>
-            <p id="">Resultado: O valor digita esta no intervalo [xx,xx].</p>
+            <p id="resultado03">Resultado: O valor digita esta no intervalo [xx,xx].</p>
             <label for="">Valor:</label>
-            <input type="text" id="">
-            <input type="button" value="Calcular">
+            <input type="text" id="num03">
+            <input type="button" onclick="questao03()" value="Calcular">
         </div>
         <div class="questao">
             <h1>Questã 04:<span> Aumento de Salário <a
@@ -147,6 +147,26 @@
                 resultado = "Senha Invalida";
             }
             document.getElementById("resultado02").innerHTML = `Resultado: ${resultado}`;
+        }
+
+        function questao03() {
+            let num = document.getElementById("num03").value;
+            let resultado = "no intervalo ";
+            if(num > 0 && num <= 25){
+                resultado += '[00,25]';
+            } else
+            if(num > 25 && num <= 50){
+                resultado += '[25,50]';
+            } else
+            if(num > 50 && num <= 75){
+                resultado += '[50,75]';
+            } else
+            if(num > 75 && num <= 100){
+                resultado += '[75,100]';
+            } else {
+                resultado = 'fora do intervalo';
+            }
+            document.getElementById("resultado03").innerHTML = `Resultado: O valor digita esta ${resultado}.`;
         }
     </script>
 </body>
