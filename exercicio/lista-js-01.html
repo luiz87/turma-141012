@@ -70,10 +70,10 @@
         <div class="questao">
             <h1>Questã 02:<span> Senha Fixa <a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1114"
                         target="_blank">detalhar</a></span></h1>
-            <p id="">Resultado: xxxxx</p>
+            <p id="resultado02">Resultado: xxxxx</p>
             <label for="">Digite a senha:</label>
-            <input type="password" id="">
-            <input type="button" value="Calcular">
+            <input type="password" id="senha">
+            <input type="button" onclick="questao02()" value="Calcular">
         </div>
         <div class="questao">
             <h1>Questã 03:<span> Intervalo [0,25], [25,50], [50,75], [75,100] <a
@@ -104,7 +104,8 @@
         </div>
         <div class="questao">
             <h1>Questã 06:<span> Calcular o salário de um funcionário <a
-                        href="https://www.urionlinejudge.com.br/repository/UOJ_1008.html" target="_blank">detalhar</a></span></h1>
+                        href="https://www.urionlinejudge.com.br/repository/UOJ_1008.html"
+                        target="_blank">detalhar</a></span></h1>
             <p id="">Resultado: O funcionario xxxxxx vai receber xxx.</p>
             <label for="">Nome Funcionário</label>
             <input type="text" id="">
@@ -116,7 +117,8 @@
         </div>
         <div class="questao">
             <h1>Questã 07:<span> Calcular o consumo médio de um automóvel <a
-                        href="https://www.urionlinejudge.com.br/repository/UOJ_1014.html" target="_blank">detalhar</a></span></h1>
+                        href="https://www.urionlinejudge.com.br/repository/UOJ_1014.html"
+                        target="_blank">detalhar</a></span></h1>
             <p id="">Resultado: O automóvel fez o consumo médio de xxx.</p>
             <label for="">Distância percorrida</label>
             <input type="text" id="">
@@ -127,13 +129,24 @@
     </div>
     <script>
         function questao01() {
-            let n1 = document.getElementById('nota01').value;
-            let n2 = document.getElementById('nota02').value;
-            let n3 = document.getElementById('nota03').value;
+            let a = document.getElementById('nota01').value;
+            let b = document.getElementById('nota02').value;
+            let c = document.getElementById('nota03').value;
 
-            let resultado = n1 + n2 + n3; 
-            
+            let resultado = ((a * 2) + (b * 3) + (c * 5)) / 10;
+
             document.getElementById('resultado01').innerHTML = `Resultado: A média das 3 notas foi ${resultado}.`;
+        }
+
+        function questao02() {
+            let senha = document.getElementById("senha").value;
+            let resultado = "";
+            if (senha == '2002') {
+                resultado = "Acesso Permitido";
+            } else {
+                resultado = "Senha Invalida";
+            }
+            document.getElementById("resultado02").innerHTML = `Resultado: ${resultado}`;
         }
     </script>
 </body>
