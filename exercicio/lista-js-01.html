@@ -106,14 +106,14 @@
             <h1>Questã 06:<span> Calcular o salário de um funcionário <a
                         href="https://www.urionlinejudge.com.br/repository/UOJ_1008.html"
                         target="_blank">detalhar</a></span></h1>
-            <p id="">Resultado: O funcionario xxxxxx vai receber xxx.</p>
+            <p id="resultado06">Resultado: O funcionario xxxxxx vai receber xxx.</p>
             <label for="">Nome Funcionário</label>
-            <input type="text" id="">
+            <input type="text" id="nome">
             <label for="">Valor Hora</label>
-            <input type="text" id="">
+            <input type="text" id="valorHora">
             <label for="">Total de Horas Trabalhado</label>
-            <input type="text" id="">
-            <input type="button" value="Calcular">
+            <input type="text" id="totalHoras">
+            <input type="button" onclick="questao06()" value="Calcular">
         </div>
         <div class="questao">
             <h1>Questã 07:<span> Calcular o consumo médio de um automóvel <a
@@ -192,6 +192,17 @@
             let ganho = (salario/100) * percentual;
             let novoSalario = Number(salario) + ganho;
             document.getElementById("resultado04").innerHTML = `Resultado: Novo salario: ${novoSalario}, Ganho: ${ganho}, Percentual: ${percentual}%`;
+        }
+
+
+        function questao06() {
+            let valorHora = document.getElementById("valorHora").value;
+            let totalHoras = document.getElementById("totalHoras").value;
+            let nome = document.getElementById("nome").value;
+
+            let resultado = valorHora * totalHoras;
+            
+            document.getElementById("resultado06").innerHTML = `Resultado: O funcionario ${nome} vai receber ${resultado}.`;
         }
     </script>
 </body>
