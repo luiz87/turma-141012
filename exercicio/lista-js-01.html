@@ -97,10 +97,10 @@
             <h1>Questã 05:<span> Imposto de Renda <a
                         href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1051"
                         target="_blank">detalhar</a></span></h1>
-            <p id="">Resultado:Imposto xxxxx</p>
+            <p id="resultado05">Resultado:Imposto xxxxx</p>
             <label for="">Renda:</label>
-            <input type="text" id="">
-            <input type="button" value="Calcular">
+            <input type="text" id="renda">
+            <input type="button" onclick="questao05()" value="Calcular">
         </div>
         <div class="questao">
             <h1>Questã 06:<span> Calcular o salário de um funcionário <a
@@ -152,20 +152,20 @@
         function questao03() {
             let num = document.getElementById("num03").value;
             let resultado = "no intervalo ";
-            if(num > 0 && num <= 25){
+            if (num > 0 && num <= 25) {
                 resultado += '[00,25]';
             } else
-            if(num > 25 && num <= 50){
-                resultado += '[25,50]';
-            } else
-            if(num > 50 && num <= 75){
-                resultado += '[50,75]';
-            } else
-            if(num > 75 && num <= 100){
-                resultado += '[75,100]';
-            } else {
-                resultado = 'fora do intervalo';
-            }
+                if (num > 25 && num <= 50) {
+                    resultado += '[25,50]';
+                } else
+                    if (num > 50 && num <= 75) {
+                        resultado += '[50,75]';
+                    } else
+                        if (num > 75 && num <= 100) {
+                            resultado += '[75,100]';
+                        } else {
+                            resultado = 'fora do intervalo';
+                        }
             document.getElementById("resultado03").innerHTML = `Resultado: O valor digita esta ${resultado}.`;
         }
 
@@ -173,27 +173,49 @@
             let salario = document.getElementById("salario").value;
             let percentual = 0;
 
-            if(salario > 0 && salario <= 400){
+            if (salario > 0 && salario <= 400) {
                 percentual = 15;
             }
-            if(salario > 400 && salario <= 800){
+            if (salario > 400 && salario <= 800) {
                 percentual = 12;
             }
-            if(salario > 800 && salario <= 1200){
+            if (salario > 800 && salario <= 1200) {
                 percentual = 10;
             }
-            if(salario > 1200 && salario <= 2000){
+            if (salario > 1200 && salario <= 2000) {
                 percentual = 7;
             }
-            if(salario > 2000) {
+            if (salario > 2000) {
                 percentual = 4;
             }
-            
-            let ganho = (salario/100) * percentual;
+
+            let ganho = (salario / 100) * percentual;
             let novoSalario = Number(salario) + ganho;
             document.getElementById("resultado04").innerHTML = `Resultado: Novo salario: ${novoSalario}, Ganho: ${ganho}, Percentual: ${percentual}%`;
         }
 
+        function questao05() {
+            let renda = document.getElementById("renda").value;
+            let resultado;
+            if (renda > 0 && renda <= 2000) {
+                resultado = "Isento"
+            }
+            if (renda > 2000 && renda <= 3000) {
+                renda = renda - 2000;
+                resultado = (renda / 100) * 8;
+            }
+            if (renda > 3000 && renda <= 4500) {
+                renda = renda - 3000;
+                resultado = (renda / 100) * 18;
+                resultado += 80;
+            }
+            if (renda > 4500) {
+                renda = renda - 4500;
+                resultado = (renda / 100) * 28;
+                resultado += 350;
+            }
+            document.getElementById("resultado05").innerHTML = `Resultado:Imposto ${resultado}`;
+        }
 
         function questao06() {
             let valorHora = document.getElementById("valorHora").value;
@@ -201,14 +223,14 @@
             let nome = document.getElementById("nome").value;
 
             let resultado = valorHora * totalHoras;
-            
+
             document.getElementById("resultado06").innerHTML = `Resultado: O funcionario ${nome} vai receber ${resultado}.`;
         }
 
         function questao07() {
             let combustivel = document.getElementById("combustivel").value;
             let distancia = document.getElementById("distancia").value;
-            let resultado = distancia/combustivel;
+            let resultado = distancia / combustivel;
 
             document.getElementById("resultado07").innerHTML = `Resultado: O automóvel fez o consumo médio de  ${resultado}.`;
         }
