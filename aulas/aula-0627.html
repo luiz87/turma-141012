@@ -92,7 +92,11 @@
                     }
                 }
             }
-            console.log(quiz);
+            // console.log(quiz);
+            let baseQuiz = localStorage.getItem('baseQuiz');
+            baseQuiz = JSON.parse(baseQuiz);
+            baseQuiz.push(quiz);
+            localStorage.setItem('baseQuiz', JSON.stringify(baseQuiz));
         }
     </script>
 </body>
