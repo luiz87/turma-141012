@@ -173,18 +173,39 @@
                     Jo-Ken-Po <a href="https://luiz87.github.io/lista-atividade/atividade-09/detalhes.html"
                         target="_blank">detalhar</a></span>
             </h1>
-            <p id="">Resultado: [Vitótio|Derrota|Empate]</p>
-            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
-                class="mao">✊🏽</span>
-            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
-                class="mao">🖐🏽</span>
-            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
-                class="mao">✌🏽</span>
+            <p id="resultado06">Resultado: [Vitória|Derrota|Empate]</p>
+            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'" class="mao"
+                onclick="desafio('✊🏽')">✊🏽</span>
+            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'" class="mao"
+                onclick="desafio('🖐🏽')">🖐🏽</span>
+            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'" class="mao"
+                onclick="desafio('✌🏽')">✌🏽</span>
             #
-            <span class="adversario">👋🏽</span>
+            <span id="adversario" class="adversario">👋🏽</span>
         </div>
     </div>
     <script>
+        function desafio(mao) {
+            console.log(mao);
+            let nSorteado = Math.round(Math.random() * 2);
+            let adversario = ['✊🏽', '🖐🏽', '✌🏽'];
+            let comp = adversario[nSorteado];
+            let resultado = "";
+            if (mao == comp) {
+                resultado += 'Empate';
+            } else if (
+                (mao == '✊🏽' && comp == '✌🏽') ||
+                (mao == '🖐🏽' && comp == '✊🏽') ||
+                (mao == '✌🏽' && comp == '🖐🏽')
+            ) {
+                resultado += 'Vitória';
+            } else {
+                resultado += 'Derrota';
+            }
+            document.getElementById('adversario').innerHTML = comp;
+            document.getElementById('resultado06').innerHTML = `Resultado: [${resultado}]`;
+        }
+
         function questao01() {
             let nuTabuada = document.getElementById("nuTabuada").value;
             // while,for(1,2,3),do while
@@ -301,7 +322,7 @@
                 Lista de homens [${m}] <br>
                 Lista de mulheres [${f}]`;
                 document.getElementById('resultadoQ5').innerHTML = resultado;
-            }else if(botao == 'clear'){
+            } else if (botao == 'clear') {
                 listaQ5 = [];
                 resultado = `Resultado: <br>
                 Lista de homens [] <br>
