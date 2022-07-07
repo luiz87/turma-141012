@@ -152,20 +152,20 @@
                     <a href="https://luiz87.github.io/lista-atividade/atividade-09/detalhes.html"
                         target="_blank">detalhar</a></span>
             </h1>
-            <p id="">
+            <p id="resultadoQ5">
                 Resultado: <br>Lista de homens [xxxx,xxxx,xxxx,xxxxx] <br>Lista de
                 mulheres [xxxx,xxxx,xxxx,xxxxx]
             </p>
             <label for="">Nome:</label>
-            <input type="text" id="">
+            <input type="text" id="nome">
             <label for="">Sexo:</label>
-            <select name="sexo" id="">
+            <select name="sexo" id="sexo">
                 <option value="M">Masculino</option>
                 <option value="F">Feminino</option>
             </select>
-            <input type="button" value="Add">
-            <input type="button" value="Show">
-            <input type="button" value="Clear">
+            <input type="button" value="Add" onclick="questao05('add')">
+            <input type="button" value="Show" onclick="questao05('show')">
+            <input type="button" value="Clear" onclick="questao05('clear')">
         </div>
         <div class="questao">
             <h1>
@@ -188,7 +188,7 @@
         function questao01() {
             let nuTabuada = document.getElementById("nuTabuada").value;
             // while,for(1,2,3),do while
-            // for(VARIAVEL in ARRAY) for(VARIAVEL on ARRAY)
+            // for(VARIAVEL in ARRAY) for(VARIAVEL of ARRAY)
             let cont = 1;
             let resultado = "Resultado:<br>";
             do {
@@ -274,12 +274,41 @@
             let resultado = "Resultado: ";
             for (cont = 1; cont <= 6; cont++) {
                 let nSorteado = Math.round(Math.random() * 60);
-                resultado += nSorteado+",";
+                resultado += nSorteado + ",";
+            }
+            document.getElementById('resultadoQ4').innerHTML = resultado;
+        }
+
+        let listaQ5 = [];
+        function questao05(botao) {
+            let pessoa = {};
+            let resultado = "";
+            pessoa.nome = document.getElementById('nome').value;
+            pessoa.sexo = document.getElementById('sexo').value;
+
+            if (botao == 'add') {
+                listaQ5.push(pessoa);
+            } else if (botao == 'show') {
+                let m = "", f = "";
+                for (p of listaQ5) {
+                    if (p.sexo == 'M') {
+                        m += p.nome + ',';
+                    } else {
+                        f += p.nome + ',';
+                    }
+                }
+                resultado = `Resultado: <br>
+                Lista de homens [${m}] <br>
+                Lista de mulheres [${f}]`;
+                document.getElementById('resultadoQ5').innerHTML = resultado;
+            }else if(botao == 'clear'){
+                listaQ5 = [];
+                resultado = `Resultado: <br>
+                Lista de homens [] <br>
+                Lista de mulheres []`;
+                document.getElementById('resultadoQ5').innerHTML = resultado;
             }
 
-
-
-            document.getElementById('resultadoQ4').innerHTML = resultado;
         }
 
     </script>
