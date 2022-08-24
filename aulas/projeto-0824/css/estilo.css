@@ -41,6 +41,29 @@ h1{
     color: white;
 }
 
+.btMaisMenos{
+    right: 10px;
+    bottom: 20px;
+    position: absolute;
+}
+
+.btMais, .btMenos{
+    cursor: pointer;
+    color: #e66b6b;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px;
+}
+
+.quantidade{
+    position: absolute;
+    right: -76px;
+    bottom: 20px;
+    background-color: #e66b6b;
+    padding: 20px;
+    border-radius: 60%;
+    font-size: 20px;
+}
 .carrinho:hover{
     color: #e66b6b;
 }
