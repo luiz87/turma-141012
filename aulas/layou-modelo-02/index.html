@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .produto {
+            width: 200px;
+            height: 287px;
+            border: solid black 3px;
+            margin: 20px 0px 0px 20px;
+            float: left;
+        }
+
+        .produto img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .produto .nome {
+            margin-top: -5px;
+            background-color: rgb(90, 75, 75);
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .produto .descricao {
+            padding: 5px;
+            background-color: #d3d6d9;
+        }
+
+        .valor {
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        .btadd {
+            float: right;
+        }
+
+        .ls-prduto {
+            background-color: #d70f0c;
+            width: 700px;
+            margin-top: 106px;
+        }
+
+        #container {
+            display: grid;
+            place-items: center;
+            /* margin-top: 100px; */
+        }
+
+        #banner {
+            background-color: black;
+            padding: 30px 300px 30px 300px;
+            position: fixed;
+            width: 100%;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        #banner img {
+            width: 50px;
+            margin-right: 30px;
+            float: left;
+        }
+
+        #btPrincipal {
+            background-color: #d70f0c;
+            border-radius: 100%;
+            width: 70px;
+            height: 70px;
+        }
+
+        .btTamanho {
+            font-size: 50px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        #btPrincipal span {
+            background-color: black;
+            color: #fff;
+            position: absolute;
+            border-radius: 100%;
+            padding: 4px 10px 4px 10px;
+            left: 45px;
+            top: -10px;
+        }
+
+        #btFixo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+        }
+    </style>
+
+    <div id="banner">
+        <img src="logo.PNG" alt="">
+        <h1>Nome da Empresa</h1>
+    </div>
+    <div id="container">
+        <div class="ls-prduto">
+            <div class="produto">
+                <img src="logo.PNG" alt="">
+                <p class="nome">Nome do Produto</p>
+                <p class="descricao">Descrição</p>
+                <p class="valor">R$: 100<span class="btadd"><i class="material-icons">&#xe8cc;</i></span></p>
+            </div>
+            <div class="produto">
+                <img src="img.webp" alt="">
+                <p class="nome">Nome do Produto</p>
+                <p class="descricao">Descrição</p>
+                <p class="valor">R$: 100<span class="btadd"><i class="material-icons">&#xe8cc;</i></span></p>
+            </div>
+            <div class="produto">
+                <img src="logo.PNG" alt="">
+                <p class="nome">Nome do Produto</p>
+                <p class="descricao">Descrição</p>
+                <p class="valor">R$: 100<span class="btadd"><i class="material-icons">&#xe8cc;</i></span></p>
+            </div>
+            <div class="produto">
+                <img src="img.webp" alt="">
+                <p class="nome">Nome do Produto</p>
+                <p class="descricao">Descrição</p>
+                <p class="valor">R$: 100<span class="btadd"><i class="material-icons">&#xe8cc;</i></span></p>
+            </div>
+            <div class="produto">
+                <img src="logo.PNG" alt="">
+                <p class="nome">Nome do Produto</p>
+                <p class="descricao">Descrição</p>
+                <p class="valor">R$: 100<span class="btadd"><i class="material-icons">&#xe8cc;</i></span></p>
+            </div>
+            <div class="produto">
+                <img src="img.webp" alt="">
+                <p class="nome">Nome do Produto</p>
+                <p class="descricao">Descrição</p>
+                <p class="valor">R$: 100<span class="btadd"><i class="material-icons">&#xe8cc;</i></span></p>
+            </div>
+        </div>
+    </div>
+    <div id="btFixo">
+        <div id="btPrincipal">
+            <span>0</span>
+            <i class="material-icons btTamanho">&#xe8cc;</i>
+        </div>
+    </div>
+</body>
+
+</html>
