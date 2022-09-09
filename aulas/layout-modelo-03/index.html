@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Layout 03</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 {
+            background-color: cadetblue;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .produto {
+            width: 98%;
+            height: 60px;
+            background-color: #99d2d3;
+            margin: 0 auto;
+
+        }
+
+        .produto img {
+            width: 20%;
+            height: 90%;
+            float: left;
+            border: solid gray;
+        }
+
+        .produto h2 {
+            float: left;
+            width: 75%;
+            margin-left: 5px;
+            height: 47%;
+            border: solid gray;
+        }
+
+        .produto .valor {
+            float: left;
+            margin-left: 5px;
+            margin-top: 3px;
+            width: 64%;
+            height: 28%;
+            border: solid gray;
+        }
+
+        .produto .bt {
+            float: left;
+            margin-left: 5px;
+            margin-top: 3px;
+            width: 8%;
+            height: 28%;
+            border: solid gray;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .embrulho {
+            margin-top: 5px;
+            margin-bottom: 12px;
+            /* float: left; */
+        }
+
+        @media only screen and (min-width: 500px) {
+
+            .produto {
+                width: 80%;
+            }
+
+        }
+
+        @media only screen and (min-width: 700px) {
+
+            .produto {
+                width: 350px;
+            }
+
+            .embrulho {
+                float: left;
+                margin-left: 50px;
+            }
+
+            #ls-produto {
+                width: 900px;
+            }
+
+            #container {
+                display: grid;
+                place-items: center;
+            }
+        }
+    </style>
+    <header id="banner">
+        <h1>
+            Loja de Hamburguer
+        </h1>
+    </header>
+    <div id="container">
+        <div id="ls-produto">
+            <div class="embrulho">
+                <div class="produto">
+                    <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/7/3/1653514781237.jpg" alt="">
+                    <h2 class="nome">Hamburguer</h2>
+                    <p class="valor">10.00</p>
+                    <span class="material-icons bt">&#xe8cc;</span>
+                </div>
+            </div>
+            <div class="embrulho">
+                <div class="produto">
+                    <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/7/3/1653514781237.jpg" alt="">
+                    <h2 class="nome">Hamburguer</h2>
+                    <p class="valor">10.00</p>
+                    <span class="material-icons bt">&#xe8cc;</span>
+                </div>
+            </div>
+            <div class="embrulho">
+                <div class="produto">
+                    <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/7/3/1653514781237.jpg" alt="">
+                    <h2 class="nome">Hamburguer</h2>
+                    <p class="valor">10.00</p>
+                    <span class="material-icons bt">&#xe8cc;</span>
+                </div>
+            </div>
+            <div class="embrulho">
+                <div class="produto">
+                    <img src="https://img.estadao.com.br/thumbs/640/resources/jpg/7/3/1653514781237.jpg" alt="">
+                    <h2 class="nome">Hamburguer</h2>
+                    <p class="valor">10.00</p>
+                    <span class="material-icons bt">&#xe8cc;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
